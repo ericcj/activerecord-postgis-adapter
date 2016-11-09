@@ -14,7 +14,6 @@ dist: trusty
 sudo: required
 addons:
   postgresql: "9.5"
-
 before_script:
   - psql -U postgres -c "create database postgis_adapter_test"
   - psql -U postgres -d postgis_adapter_test -c "create extension postgis"
