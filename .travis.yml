@@ -17,5 +17,6 @@ addons:
   postgresql: "9.5"
 before_script:
   - psql -U postgres -c "create database postgis_adapter_test"
-  - psql -U postgres -d postgis_adapter_test -c "create extension postgis"
+  - sudo apt-get install postgresql-9.5-postgis-2.2 postgresql-9.5-postgis-2.2-scripts
+  - psql -U postgres -c "create extension postgis version '2.2.2'"
 script: bundle exec rake test
